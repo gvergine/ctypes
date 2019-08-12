@@ -1,0 +1,21 @@
+grammar com.systemassembly.ctypes.CTypesDsl with org.eclipse.xtext.common.Terminals
+
+generate cTypesDsl "http://www.systemassembly.com/ctypes/CTypesDsl"
+
+Model:
+	dataTypeDefinitions+=DataTypeDef*;
+
+DataTypeDef: StructDef;
+
+BasicType: 'int8'|'int16'|'int32'|'int64'|'uint8'|'uint16'|'uint32'|'uint64'|'float'|'double';
+
+
+StructDef:
+	'struct' name=ID '{'
+	fields+=StructField* 
+	 '}' ';' 
+;
+
+StructField:
+	(basicType=BasicType|derivedType=[DataTypeDef|ID])('['arraySize=INT']')? name=ID ';'
+;

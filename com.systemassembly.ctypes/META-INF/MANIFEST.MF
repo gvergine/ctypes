@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.systemassembly.ctypes
+Bundle-ManifestVersion: 2
+Bundle-Name: com.systemassembly.ctypes
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.systemassembly.ctypes; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.systemassembly.ctypes.parser.antlr,
+ com.systemassembly.ctypes.validation,
+ com.systemassembly.ctypes.generator,
+ com.systemassembly.ctypes,
+ com.systemassembly.ctypes.serializer,
+ com.systemassembly.ctypes.parser.antlr.internal,
+ com.systemassembly.ctypes.cTypesDsl.impl,
+ com.systemassembly.ctypes.cTypesDsl,
+ com.systemassembly.ctypes.services,
+ com.systemassembly.ctypes.scoping,
+ com.systemassembly.ctypes.cTypesDsl.util
+Import-Package: org.apache.log4j

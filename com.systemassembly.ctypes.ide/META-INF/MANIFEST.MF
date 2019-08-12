@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.systemassembly.ctypes.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: com.systemassembly.ctypes.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.systemassembly.ctypes.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: com.systemassembly.ctypes,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.systemassembly.ctypes.ide.contentassist.antlr.internal,
+ com.systemassembly.ctypes.ide.contentassist.antlr
