@@ -29,6 +29,10 @@ public interface StructField extends EObject
   /**
    * Returns the value of the '<em><b>Basic Type</b></em>' attribute.
    * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Basic Type</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Basic Type</em>' attribute.
    * @see #setBasicType(String)
@@ -51,6 +55,10 @@ public interface StructField extends EObject
   /**
    * Returns the value of the '<em><b>Derived Type</b></em>' reference.
    * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Derived Type</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Derived Type</em>' reference.
    * @see #setDerivedType(DataTypeDef)
@@ -73,6 +81,10 @@ public interface StructField extends EObject
   /**
    * Returns the value of the '<em><b>Array Size</b></em>' attribute.
    * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Array Size</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Array Size</em>' attribute.
    * @see #setArraySize(int)
@@ -95,6 +107,10 @@ public interface StructField extends EObject
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)

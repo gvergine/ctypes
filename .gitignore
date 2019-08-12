@@ -4,3 +4,5 @@ com.systemassembly.ctypes/target
 com.systemassembly.ctypes.feature/target
 com.systemassembly.ctypes.ide/target
 com.systemassembly.ctypes.tests/target
+workspace
+

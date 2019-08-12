@@ -79,7 +79,6 @@ public class CTypesDslFactoryImpl extends EFactoryImpl implements CTypesDslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public Model createModel()
   {
     ModelImpl model = new ModelImpl();
@@ -91,7 +90,6 @@ public class CTypesDslFactoryImpl extends EFactoryImpl implements CTypesDslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public DataTypeDef createDataTypeDef()
   {
     DataTypeDefImpl dataTypeDef = new DataTypeDefImpl();
@@ -103,7 +101,6 @@ public class CTypesDslFactoryImpl extends EFactoryImpl implements CTypesDslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public StructDef createStructDef()
   {
     StructDefImpl structDef = new StructDefImpl();
@@ -115,7 +112,6 @@ public class CTypesDslFactoryImpl extends EFactoryImpl implements CTypesDslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public StructField createStructField()
   {
     StructFieldImpl structField = new StructFieldImpl();
@@ -127,7 +123,6 @@ public class CTypesDslFactoryImpl extends EFactoryImpl implements CTypesDslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public CTypesDslPackage getCTypesDslPackage()
   {
     return (CTypesDslPackage)getEPackage();

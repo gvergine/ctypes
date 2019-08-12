@@ -94,7 +94,6 @@ public class StructDefImpl extends DataTypeDefImpl implements StructDef
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public String getName()
   {
     return name;
@@ -105,7 +104,6 @@ public class StructDefImpl extends DataTypeDefImpl implements StructDef
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public void setName(String newName)
   {
     String oldName = name;
@@ -119,7 +117,6 @@ public class StructDefImpl extends DataTypeDefImpl implements StructDef
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public EList<StructField> getFields()
   {
     if (fields == null)
@@ -233,7 +230,7 @@ public class StructDefImpl extends DataTypeDefImpl implements StructDef
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuilder result = new StringBuilder(super.toString());
+    StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
     result.append(')');

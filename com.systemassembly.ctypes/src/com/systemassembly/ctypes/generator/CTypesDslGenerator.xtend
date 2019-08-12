@@ -38,15 +38,31 @@ class CTypesDslGenerator extends AbstractGenerator {
 		
 		«FOR dataType : dataTypes SEPARATOR '\n'»
 		«IF dataType instanceof StructDef»
+		// size of this struct: «dataType.calc_struct_size» bytes
 		struct «dataType.name» {
 			«FOR field : dataType.fields»
 			«field.typedecl»«field.arraydecl» «field.name»;
 			«ENDFOR»
 		};
+		
 		typedef struct «dataType.name» «dataType.name»_t;
+		
+		
 		«ENDIF»
 		«ENDFOR»
 	'''
+	}
+	
+	def int calc_struct_size(StructDef struct) {
+		var struct_size = 0
+		for (field : struct.fields) {
+			var size = 0;
+			if (field.basicType !== null) size = sizeof_types_map.get(field.basicType)
+			else size = (field.derivedType as StructDef).calc_struct_size
+			if (field.arraySize > 0) size = size * field.arraySize;
+			struct_size += size		
+		}
+		return struct_size
 	}
 	
 	def type_includes(Resource resource) {
@@ -100,4 +116,16 @@ class CTypesDslGenerator extends AbstractGenerator {
 		'double' -> 'double'
 		}
 	
+	val sizeof_types_map = #{
+		'int8' -> 1,
+		'int16' -> 2,
+		'int32' -> 4,
+		'int64' -> 8,
+		'uint8' -> 1,
+		'uint16' -> 2,
+		'uint32' -> 4,
+		'uint64' -> 8,
+		'float' -> 4,
+		'double' -> 8
+		}
 }

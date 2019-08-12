@@ -129,7 +129,6 @@ public class StructFieldImpl extends MinimalEObjectImpl.Container implements Str
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public String getBasicType()
   {
     return basicType;
@@ -140,7 +139,6 @@ public class StructFieldImpl extends MinimalEObjectImpl.Container implements Str
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public void setBasicType(String newBasicType)
   {
     String oldBasicType = basicType;
@@ -154,7 +152,6 @@ public class StructFieldImpl extends MinimalEObjectImpl.Container implements Str
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public DataTypeDef getDerivedType()
   {
     if (derivedType != null && derivedType.eIsProxy())
@@ -185,7 +182,6 @@ public class StructFieldImpl extends MinimalEObjectImpl.Container implements Str
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public void setDerivedType(DataTypeDef newDerivedType)
   {
     DataTypeDef oldDerivedType = derivedType;
@@ -199,7 +195,6 @@ public class StructFieldImpl extends MinimalEObjectImpl.Container implements Str
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public int getArraySize()
   {
     return arraySize;
@@ -210,7 +205,6 @@ public class StructFieldImpl extends MinimalEObjectImpl.Container implements Str
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public void setArraySize(int newArraySize)
   {
     int oldArraySize = arraySize;
@@ -224,7 +218,6 @@ public class StructFieldImpl extends MinimalEObjectImpl.Container implements Str
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public String getName()
   {
     return name;
@@ -235,7 +228,6 @@ public class StructFieldImpl extends MinimalEObjectImpl.Container implements Str
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public void setName(String newName)
   {
     String oldName = name;
@@ -351,7 +343,7 @@ public class StructFieldImpl extends MinimalEObjectImpl.Container implements Str
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuilder result = new StringBuilder(super.toString());
+    StringBuffer result = new StringBuffer(super.toString());
     result.append(" (basicType: ");
     result.append(basicType);
     result.append(", arraySize: ");

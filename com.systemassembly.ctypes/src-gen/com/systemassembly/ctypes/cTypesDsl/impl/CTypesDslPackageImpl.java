@@ -82,7 +82,7 @@ public class CTypesDslPackageImpl extends EPackageImpl implements CTypesDslPacka
 
   /**
    * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-   *
+   * 
    * <p>This method is used to initialize {@link CTypesDslPackage#eINSTANCE} when that field is accessed.
    * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
    * <!-- begin-user-doc -->
@@ -97,8 +97,7 @@ public class CTypesDslPackageImpl extends EPackageImpl implements CTypesDslPacka
     if (isInited) return (CTypesDslPackage)EPackage.Registry.INSTANCE.getEPackage(CTypesDslPackage.eNS_URI);
 
     // Obtain or create and register package
-    Object registeredCTypesDslPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-    CTypesDslPackageImpl theCTypesDslPackage = registeredCTypesDslPackage instanceof CTypesDslPackageImpl ? (CTypesDslPackageImpl)registeredCTypesDslPackage : new CTypesDslPackageImpl();
+    CTypesDslPackageImpl theCTypesDslPackage = (CTypesDslPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CTypesDslPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new CTypesDslPackageImpl());
 
     isInited = true;
 
@@ -111,6 +110,7 @@ public class CTypesDslPackageImpl extends EPackageImpl implements CTypesDslPacka
     // Mark meta-data to indicate it can't be changed
     theCTypesDslPackage.freeze();
 
+  
     // Update the registry and return the package
     EPackage.Registry.INSTANCE.put(CTypesDslPackage.eNS_URI, theCTypesDslPackage);
     return theCTypesDslPackage;
@@ -121,7 +121,6 @@ public class CTypesDslPackageImpl extends EPackageImpl implements CTypesDslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public EClass getModel()
   {
     return modelEClass;
@@ -132,7 +131,6 @@ public class CTypesDslPackageImpl extends EPackageImpl implements CTypesDslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public EReference getModel_DataTypeDefinitions()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
@@ -143,7 +141,6 @@ public class CTypesDslPackageImpl extends EPackageImpl implements CTypesDslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public EClass getDataTypeDef()
   {
     return dataTypeDefEClass;
@@ -154,7 +151,6 @@ public class CTypesDslPackageImpl extends EPackageImpl implements CTypesDslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public EClass getStructDef()
   {
     return structDefEClass;
@@ -165,7 +161,6 @@ public class CTypesDslPackageImpl extends EPackageImpl implements CTypesDslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public EAttribute getStructDef_Name()
   {
     return (EAttribute)structDefEClass.getEStructuralFeatures().get(0);
@@ -176,7 +171,6 @@ public class CTypesDslPackageImpl extends EPackageImpl implements CTypesDslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public EReference getStructDef_Fields()
   {
     return (EReference)structDefEClass.getEStructuralFeatures().get(1);
@@ -187,7 +181,6 @@ public class CTypesDslPackageImpl extends EPackageImpl implements CTypesDslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public EClass getStructField()
   {
     return structFieldEClass;
@@ -198,7 +191,6 @@ public class CTypesDslPackageImpl extends EPackageImpl implements CTypesDslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public EAttribute getStructField_BasicType()
   {
     return (EAttribute)structFieldEClass.getEStructuralFeatures().get(0);
@@ -209,7 +201,6 @@ public class CTypesDslPackageImpl extends EPackageImpl implements CTypesDslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public EReference getStructField_DerivedType()
   {
     return (EReference)structFieldEClass.getEStructuralFeatures().get(1);
@@ -220,7 +211,6 @@ public class CTypesDslPackageImpl extends EPackageImpl implements CTypesDslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public EAttribute getStructField_ArraySize()
   {
     return (EAttribute)structFieldEClass.getEStructuralFeatures().get(2);
@@ -231,7 +221,6 @@ public class CTypesDslPackageImpl extends EPackageImpl implements CTypesDslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public EAttribute getStructField_Name()
   {
     return (EAttribute)structFieldEClass.getEStructuralFeatures().get(3);
@@ -242,7 +231,6 @@ public class CTypesDslPackageImpl extends EPackageImpl implements CTypesDslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public CTypesDslFactory getCTypesDslFactory()
   {
     return (CTypesDslFactory)getEFactoryInstance();

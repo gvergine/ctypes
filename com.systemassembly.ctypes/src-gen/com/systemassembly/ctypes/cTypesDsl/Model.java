@@ -29,6 +29,10 @@ public interface Model extends EObject
    * Returns the value of the '<em><b>Data Type Definitions</b></em>' containment reference list.
    * The list contents are of type {@link com.systemassembly.ctypes.cTypesDsl.DataTypeDef}.
    * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Data Type Definitions</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Data Type Definitions</em>' containment reference list.
    * @see com.systemassembly.ctypes.cTypesDsl.CTypesDslPackage#getModel_DataTypeDefinitions()

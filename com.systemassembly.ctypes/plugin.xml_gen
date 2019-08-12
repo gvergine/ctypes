@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
+			uri = "http://www.systemassembly.com/ctypes/CTypesDsl"
+			class = "com.systemassembly.ctypes.cTypesDsl.CTypesDslPackage"
+			genModel = "model/generated/CTypesDsl.genmodel" />
+	</extension>
+</plugin>

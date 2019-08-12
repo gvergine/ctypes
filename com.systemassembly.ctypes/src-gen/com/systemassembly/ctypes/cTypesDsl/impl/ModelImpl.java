@@ -72,7 +72,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public EList<DataTypeDef> getDataTypeDefinitions()
   {
     if (dataTypeDefinitions == null)

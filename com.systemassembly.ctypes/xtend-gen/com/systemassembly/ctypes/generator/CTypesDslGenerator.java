@@ -64,6 +64,11 @@ public class CTypesDslGenerator extends AbstractGenerator {
           }
           {
             if ((dataType instanceof StructDef)) {
+              _builder.append("// size of this struct: ");
+              int _calc_struct_size = this.calc_struct_size(((StructDef)dataType));
+              _builder.append(_calc_struct_size);
+              _builder.append(" bytes");
+              _builder.newLineIfNotEmpty();
               _builder.append("struct ");
               String _name = ((StructDef)dataType).getName();
               _builder.append(_name);
@@ -86,6 +91,7 @@ public class CTypesDslGenerator extends AbstractGenerator {
               }
               _builder.append("};");
               _builder.newLine();
+              _builder.newLine();
               _builder.append("typedef struct ");
               String _name_2 = ((StructDef)dataType).getName();
               _builder.append(_name_2);
@@ -94,6 +100,8 @@ public class CTypesDslGenerator extends AbstractGenerator {
               _builder.append(_name_3);
               _builder.append("_t;");
               _builder.newLineIfNotEmpty();
+              _builder.newLine();
+              _builder.newLine();
             }
           }
         }
@@ -101,6 +109,34 @@ public class CTypesDslGenerator extends AbstractGenerator {
       _xblockexpression = _builder;
     }
     return _xblockexpression;
+  }
+  
+  public int calc_struct_size(final StructDef struct) {
+    int struct_size = 0;
+    EList<StructField> _fields = struct.getFields();
+    for (final StructField field : _fields) {
+      {
+        int size = 0;
+        String _basicType = field.getBasicType();
+        boolean _tripleNotEquals = (_basicType != null);
+        if (_tripleNotEquals) {
+          size = (this.sizeof_types_map.get(field.getBasicType())).intValue();
+        } else {
+          DataTypeDef _derivedType = field.getDerivedType();
+          size = this.calc_struct_size(((StructDef) _derivedType));
+        }
+        int _arraySize = field.getArraySize();
+        boolean _greaterThan = (_arraySize > 0);
+        if (_greaterThan) {
+          int _arraySize_1 = field.getArraySize();
+          int _multiply = (size * _arraySize_1);
+          size = _multiply;
+        }
+        int _struct_size = struct_size;
+        struct_size = (_struct_size + size);
+      }
+    }
+    return struct_size;
   }
   
   public String type_includes(final Resource resource) {
@@ -163,4 +199,6 @@ public class CTypesDslGenerator extends AbstractGenerator {
   }
   
   private final Map<String, String> c_types_map = Collections.<String, String>unmodifiableMap(CollectionLiterals.<String, String>newHashMap(Pair.<String, String>of("int8", "int8_t"), Pair.<String, String>of("int16", "int16_t"), Pair.<String, String>of("int32", "int32_t"), Pair.<String, String>of("int64", "int64_t"), Pair.<String, String>of("uint8", "uint8_t"), Pair.<String, String>of("uint16", "uint16_t"), Pair.<String, String>of("uint32", "uint32_t"), Pair.<String, String>of("uint64", "uint64_t"), Pair.<String, String>of("float", "float"), Pair.<String, String>of("double", "double")));
+  
+  private final Map<String, Integer> sizeof_types_map = Collections.<String, Integer>unmodifiableMap(CollectionLiterals.<String, Integer>newHashMap(Pair.<String, Integer>of("int8", Integer.valueOf(1)), Pair.<String, Integer>of("int16", Integer.valueOf(2)), Pair.<String, Integer>of("int32", Integer.valueOf(4)), Pair.<String, Integer>of("int64", Integer.valueOf(8)), Pair.<String, Integer>of("uint8", Integer.valueOf(1)), Pair.<String, Integer>of("uint16", Integer.valueOf(2)), Pair.<String, Integer>of("uint32", Integer.valueOf(4)), Pair.<String, Integer>of("uint64", Integer.valueOf(8)), Pair.<String, Integer>of("float", Integer.valueOf(4)), Pair.<String, Integer>of("double", Integer.valueOf(8))));
 }
